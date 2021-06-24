@@ -1,0 +1,254 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*soluciona las lineas del degrade*/
+    min-height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+:root {
+    /*cargo colores*/
+    --oscuro: #212121;
+    --primario: #df5c5c;
+}
+
+body {
+    font-family: 'krub', sans-serif;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    font-size: 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+h3 {
+    color: rgb(66, 160, 160);
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.site-header {
+    background-color: white;
+}
+
+.site-header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    /*aplico felxbox al contenedor*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*cuando supera este tamaño 768 aplica lo de adentro*/
+
+@media (min-width: 768px) {
+    .site-header nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.site-header nav a {
+    color: var(--oscuro);
+    text-decoration: none;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.site-header nav a:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .site-header nav a {
+        margin-bottom: 0;
+    }
+}
+
+.hero {
+    height: 45rem;
+    background-image: url(../img/hero.jpg);
+    /*alinear con flexbox*/
+    position: relative;
+    display: flex;
+    /*centrar horizontal*/
+    justify-content: center;
+    /*centrar vertical*/
+    align-items: center;
+}
+
+.hero::after {
+    content: '';
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/*texto*/
+
+.contenedor-hero {
+    color: white;
+    position: relative;
+    z-index: 1;
+    /*alinear el texto*/
+    text-align: center;
+}
+
+.contenedor-hero i {
+    font-size: 5rem;
+    color: var(--primario);
+}
+
+.boton {
+    background-color: rgb(66, 160, 160);
+    padding: 1rem 5rem;
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    /*letras mas gruesas*/
+    font-weight: 700;
+    /*tamaño letra*/
+    font-size: 2rem;
+    /*borde*/
+    border-radius: .5rem;
+    border: none;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.contenedor-servicios {
+    margin-top: 3rem;
+}
+
+.servicios {
+    margin: 3rem auto;
+}
+
+@media (min-width: 768px) {
+    .contenedor-servicios {
+        display: flex;
+        justify-content: space-between;
+    }
+    .servicios {
+        /*toma todo el tamaño , el 1 es factor de crecimiento */
+        flex: 0 0 calc( 33.3% - 1rem);
+    }
+}
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconos {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    /*lo hace redondo*/
+    background-color: var(--primario);
+    /*centro iconos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form {
+    background-color: gray;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin-top: 3rem;
+}
+
+form legend {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primario);
+    margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    form {
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+    .contenedor-campo {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .campo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.campo label {
+    flex: 0 0 90px;
+    padding-top: .5rem;
+    color: white;
+    margin: 1rem;
+}
+
+.campo input {
+    flex: 1;
+    height: 4rem;
+}
+
+.campo textarea {
+    flex: 1;
+    height: 7rem;
+}
+
+.w-100 {
+    flex: 0 0 100%;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.enviar {
+    display: flex;
+    justify-content: center;
+}
